@@ -1255,7 +1255,7 @@ wheels = [
 ]
 
 [[package]]
-name = "trytts"
+name = "txt2s"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

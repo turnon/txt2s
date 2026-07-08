@@ -8,11 +8,11 @@ from mlx_audio.tts.utils import load_model
 
 
 def split_sentences(text: str) -> list[str]:
-    return [s.strip() for s in re.split(r'\.(?!\d)', text) if s.strip()]
+    return [s.strip() for s in re.split(r'(?:\.(?!\d)|。)', text) if s.strip()]
 
 
 def main():
-    model = load_model("/Users/z/.lmstudio/models/mlx-community/pocket-tts-8bit")
+    model = load_model("xxx")
 
     with open("news.txt") as f:
         lines = f.readlines()
@@ -28,6 +28,8 @@ def main():
                 model=model,
                 text=sentence,
                 file_prefix=file_prefix,
+                language="Chinese",
+                instruct="A cheerful young female voice with high pitch and energetic tone.",
             )
             idx += 1
 
